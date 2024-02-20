@@ -1,0 +1,146 @@
+@use "./mixins" as m;
+
+.navbar {
+    padding-inline: 25px;
+    background: #131313;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 50px;
+        @include m.for-laptop-only {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            padding: 0;
+        }
+    }
+    #navbar__logo {
+        background-color: #ff8177;
+        background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+    &__menu {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transition: translate 400ms ease-in;
+        &.active {
+            background: #131313;
+            top: 100%;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            z-index: 99;
+            height: 50vh;
+            font-size: 1.6rem;
+        }
+        @include m.for-phone-only {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background: #131313;
+            width: 100%;
+            flex-direction: column;
+            gap: 3rem;
+            font-size: 1.8rem;
+            padding: 2rem 0;
+            translate: 0 calc((100% + 80px) * -1);
+            &.open {
+                translate: 0 0;
+            }
+        }
+    }
+
+    &__links,
+    .button {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .button {
+        display: inline-block;
+        text-decoration: none;
+        background: #f77062;
+        padding: 8px 10px;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        transition: background 0.3s ease-in-out;
+        &:hover {
+            background: #4837ff;
+        }
+        @include m.for-phone-only {
+            width: 80%;
+        }
+    }
+    &__links {
+        transition: color 0.3s ease-in-out;
+        &:hover {
+            color: #f77062;
+        }
+    }
+    &__btn {
+        @include m.for-phone-only {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background: #fff;
+        transition: all 0.3s ease-in-out;
+        @include m.for-phone-only {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    &__toggle {
+        &.open {
+            .bar--mid {
+                display: none;
+            }
+            .bar--top {
+                transform: rotate(45deg);
+                translate: 0 4px;
+            }
+            .bar--bot {
+                transform: rotate(-45deg);
+                translate: 0 -4px;
+            }
+        }
+    }
+    .fa-gem {
+        margin-right: 0.5rem;
+    }
+}
