@@ -7,13 +7,28 @@
         flex-wrap: wrap;
     }
     &__content {
+        @include m.for-laptop-only {
+            width: 33.3%;
+        }
+        @include m.for-tablet-only {
+            width: 60%;
+        }
+        @include m.for-phone-only {
+            width: 100%;
+        }
         h2 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            @include m.for-tablet-only {
+                text-align: center;
+            }
         }
         .footer__list {
             margin-bottom: 5rem;
+            @include m.for-tablet-only {
+                text-align: center;
+            }
             li {
                 margin-bottom: 0.5rem;
             }

@@ -439,13 +439,38 @@ a {
   gap: 5rem;
   flex-wrap: wrap;
 }
+@media (max-width: 992px) {
+  .footer__content {
+    width: 33.3%;
+  }
+}
+@media (max-width: 768px) {
+  .footer__content {
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  .footer__content {
+    width: 100%;
+  }
+}
 .footer__content h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
+@media (max-width: 768px) {
+  .footer__content h2 {
+    text-align: center;
+  }
+}
 .footer__content .footer__list {
   margin-bottom: 5rem;
+}
+@media (max-width: 768px) {
+  .footer__content .footer__list {
+    text-align: center;
+  }
 }
 .footer__content .footer__list li {
   margin-bottom: 0.5rem;
