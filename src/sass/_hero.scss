@@ -1,4 +1,5 @@
 .main {
+    margin-bottom: 3rem;
     .container {
         display: flex;
         justify-content: space-between;
@@ -34,6 +35,7 @@
             background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
             padding: 12px 15px;
             border-radius: 4px;
+
             a {
                 text-decoration: none;
                 color: #fff;
