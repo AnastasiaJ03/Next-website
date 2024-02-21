@@ -309,6 +309,19 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .main .container {
+    flex-direction: column;
+  }
+}
+.main__content {
+  margin-bottom: 4rem;
+}
+@media (max-width: 768px) {
+  .main__content {
+    text-align: center;
+  }
+}
 .main__content h1,
 .main__content h2 {
   -webkit-background-clip: text;
@@ -318,6 +331,12 @@ a {
   font-size: 4rem;
   font-weight: 700;
   line-height: 5rem;
+}
+@media (max-width: 768px) {
+  .main__content h1,
+  .main__content h2 {
+    font-size: 2.5rem;
+  }
 }
 .main__content h1 {
   background-color: #ff8177;
@@ -340,6 +359,12 @@ a {
   text-decoration: none;
   color: #fff;
   font-size: 17px;
+}
+@media (max-width: 768px) {
+  .main__img--container {
+    display: flex;
+    justify-content: center;
+  }
 }
 .main__img--container img {
   width: 80%;
@@ -412,6 +437,7 @@ a {
   display: flex;
   justify-content: center;
   gap: 5rem;
+  flex-wrap: wrap;
 }
 .footer__content h2 {
   font-size: 1.5rem;
@@ -444,6 +470,14 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 992px) {
+  .socials__inner {
+    flex-direction: column;
+  }
+  .socials__inner > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
 .socials__logo {
   font-size: 2rem;

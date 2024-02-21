@@ -1,11 +1,20 @@
+@use "./mixins" as m;
+
 .main {
     margin-bottom: 3rem;
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include m.for-tablet-only {
+            flex-direction: column;
+        }
     }
     &__content {
+        margin-bottom: 4rem;
+        @include m.for-tablet-only {
+            text-align: center;
+        }
         h1,
         h2 {
             -webkit-background-clip: text;
@@ -15,6 +24,9 @@
             font-size: 4rem;
             font-weight: 700;
             line-height: 5rem;
+            @include m.for-tablet-only {
+                font-size: 2.5rem;
+            }
         }
         h1 {
             background-color: #ff8177;
@@ -44,6 +56,10 @@
         }
     }
     &__img--container {
+        @include m.for-tablet-only {
+            display: flex;
+            justify-content: center;
+        }
         img {
             width: 80%;
         }
